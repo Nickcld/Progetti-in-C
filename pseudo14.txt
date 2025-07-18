@@ -1,0 +1,97 @@
+Leggere in input un elenco E di numeri interi compresi tra 18 e 90, estremi inclusi, contenente almeno 10 elementi. Considerare i controlli sugli input.
+Calcolare il valore di E più presente e quello meno presente in E. Visualizzare i risultati ottenuti.
+Esempio:
+E = (19, 23, 25, 67, 19, 67, 25, 19, 25, 19)
+Valore più presente = 19
+Valore meno presente = 23
+
+
+FUNZIONE calcolare_ricorrenze
+
+INPUT
+Elenco, elenco di numeri in cui calcolare le ricorrenze di n, array a 1 dimensione di interi
+dim, numero di elementi di Elenco, naturale >0
+n, numero di cui calcolare le ricorrenze in Elenco, intero
+
+LAVORO
+i, individua la posizione nell'array, naturale >0
+
+OUTPUT
+ricorrenze, valore che indica le ricorrenze di n nell'elenco, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    ricorrenze = 0
+    i = 1
+    MENTRE (i <= dim)
+        SE (elemento in posizione i di Elenco = n)
+            ALLORA ricorrenze = ricorrenze + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE ricerca_valore_piu_presente
+
+INPUT
+E, elenco di numeri in cui individuare il valore più presente, array a 1 dimensione di interi >=18 <=90
+dimensione, numero di elementi di E, naturale >=10
+
+LAVORO
+i, individua le posizioni degli elementi in E, naturale >0
+
+OUTPUT
+valore_piu_presente, valori con maggiori ricorrenze nell'elenco, naturale
+
+ALGORITMO
+
+INIZIO
+    i = 2
+    valore_piu_presente = elemento di E in posizione 1
+    MENTRE (i < dimensione)
+        SE (calcolare_ricorrenze(E, dimensione, elemento di elenco in posizione i) > calcolare_ricorrenze(E, dimensione, valore_piu_presente))
+            ALLORA valore_piu_presente = elemento di elenco in posizione i
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE ricerca_valore_meno_presente
+
+INPUT
+E, elenco di numeri in cui individuare il valore meno presente, array a 1 dimensione di interi >=18 <=90
+dimensione, numero di elementi di E, naturale >=10
+
+LAVORO
+i, individua le posizioni degli elementi in E, naturale >0
+
+OUTPUT
+valore_meno_presente, valori con minori ricorrenze nell'elenco, naturale
+
+ALGORITMO
+
+INIZIO
+    i = 2
+    valore_meno_presente = elemento di E in posizione 1
+    MENTRE (i < dimensione)
+        SE (calcolare_ricorrenze(E, dimensione, elemento di elenco in posizione i) < calcolare_ricorrenze(E, dimensione, valore_meno_presente))
+            ALLORA valore_meno_presente = elemento di elenco in posizione i
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+

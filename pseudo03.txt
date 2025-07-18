@@ -1,0 +1,61 @@
+Realizzare una funzione che riceve come parametro di input un array di n numeri interi ed un intero k>1, ed elimina dall’array tutti i multipli di k, spostando “a sinistra” gli elementi successivi.
+
+
+FUNZIONE verificare_multiplo
+
+INPUT
+n1, numero di cui verificare se è multiplo del secondo, intero
+n2, numero di cui verificare se n1 è multiplo o meno, intero
+
+OUTPUT
+esito, variabile che indica se n1 è multiplo di n2 o meno, booleano
+
+ALGORITMO
+
+INIZIO
+MENTRE (n1 > 0)
+    n1 = n1 - n2
+FINE
+    SE (n1 = 0)
+        ALLORA esito = VERO
+        ALTRIMENTI esito = FALSO
+    FINE
+FINE
+
+
+FUNZIONE eliminare_multipli
+
+INPUT
+vettore, array dal quale eliminare i multipli di k, array a 1 dimensione di interi
+dimensione, dimensione di vettore, naturale >0
+k, numero di cui eliminare i multipli presenti nel vettore, naturale >1
+
+LAVORO
+i, indice per scorrere le posizioni degli elementi del vettore, naturale >0 <= dimensione
+temp, indica la posizione dell'elemento del vettore da eliminare, naturale >0 <= dimensione
+
+OUTPUT
+vettore, array dal quale sono stati eliminati i multipli di k, array a 1 dimensione di interi
+
+ALGORITMO
+
+INIZIO
+i = 1
+MENTRE (i <= dimensione)
+    SE ((verificare_multiplo(elemento di vettore in posizione i, k) = VERO))
+        ALLORA temp = i
+            MENTRE (temp < dimensione)
+                elemento di vettore in posizione temp = elemento di vettore in posizione temp + 1
+                temp = temp + 1
+            FINE
+            dimensione = dimensione - 1
+    ALTRIMENTI i = i + 1
+    FINE
+FINE
+FINE
+     
+    
+    
+    
+    
+    

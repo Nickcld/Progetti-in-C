@@ -1,0 +1,152 @@
+Realizzare un programma che, presa in input un'espressione aritmetica, verifica se le parentesi sono poste in maniera corretta. Ad esempio, se ricevesse in input l'espressione aritmetica (a+b)+(c*b) dovrebbe restituire in ouput un messaggio positivo, indicando che le parentesi sono disposte correttamente.
+
+
+Tipo di dato: espressione, record a 2 campi:
+- caratteri, stringa di caratteri che costituiscono l'espressione matematica, stringa
+- dimensione, indica la lunghezza dell'espressione matematica, naturale >=0t
+
+
+FUNZIONE leggere_carattere
+
+INPUT
+espressione_1, stringa di cui leggere un carattere, espressione
+p, posizione del carattere da leggere, naturale 
+
+OUTPUT
+c, carattere della stringa letto, carattere
+
+ALGORITMO
+
+INIZIO
+c = carattere del campo caratteri di espressione_1 in posizione p
+FINE
+
+
+FUNZIONE scrivere_carattere
+
+INPUT
+espressione_1, stringa di cui scrivere un carattere, espressione
+p, posizione nella stringa del carattere da scrivere, naturale
+carattere_da_scrivere, carattere da scrivere nella stringa, carattere
+
+OUTPUT
+c, carattere scritto nella posizione corrente della stringa, carattere
+
+ALGORITMO
+
+INIZIO
+campo caratteri di espressione_1 in posizione p = carattere_da_scrivere
+c = carattere_da_scrivere
+FINE
+
+FUNZIONE leggere_dimensione
+
+INPUT
+espressione_1, stringa di cui leggere la dimensione, espressione
+
+OUTPUT
+d, dimensione di espressione_1, naturale >=0
+
+ALGORITMO
+
+INIZIO
+d = campo dimensione di espressione_1
+FINE
+
+
+FUNZIONE scrivere_dimensione
+
+INPUT
+espressione_1, stringa di cui scrivere il valore della dimensione, espressione
+dim_da_scrivere, valore della dimensione da scrivere, naturale >=0
+
+OUTPUT
+dim, nuovo valore della dimensione di espressione_1 scritto, naturale >=0
+
+ALGORITMO
+
+INIZIO
+campo dimensione di espressione_1 = dim_da_scrivere
+dim = dim_da_scrivere
+FINE
+
+FUNZIONE controllare_parentesi
+
+INPUT
+espressione_1, espressione matematica di cui controllare se le parentesi sono disposte in modo corretto o meno, espressione
+lunghezza, dimensione dell'espressione matematica, naturale >=0
+
+LAVORO
+i, indica la posizione corrente nella stringa, naturale
+j, contatore che tiene il conto delle parentesi aperte e chiuse, intero
+
+OUTPUT
+esito, indica se le parentesi nell'espressione matematica data sono disposte correttamente, booleano
+
+ALGORITMO
+
+INIZIO
+i = 1 
+j = 0 
+esito = VERO
+MENTRE (i <= lunghezza) AND (esito = VERO)
+    SE (leggere_carattere(espressione_1, i) = '(')
+        ALLORA j = j + 1
+    ALTRIMENTI SE (leggere_carattere(espressione_1, i) = ')')
+        ALLORA j = j - 1
+    FINE
+        SE (j < 0)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+FINE 
+            SE (j <> 0)
+                ALLORA esito = FALSO
+            FINE
+FINE
+            
+            
+            
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

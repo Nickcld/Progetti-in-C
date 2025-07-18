@@ -1,0 +1,226 @@
+Si realizzi un algoritmo per poter analizzare una sequenza di numeri. Letti N numeri interi, calcolare e visualizzare i seguenti risultati:
+• quanti sono i numeri positivi, nulli e negativi
+• quanti sono i numeri pari e dispari
+• se la sequenza dei numeri inseriti è crescente, decrescente oppure né crescente né
+decrescente.
+
+
+FUNZIONE individuare_positivi
+
+INPUT
+sequenza, sequenza di N numeri in cui individuare quelli positivi, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+num_positivi, numero di valori positivi individuati nella sequenza, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    num_positivi = 0
+    i = 1
+    MENTRE (i <= N)
+        SE (elemento in posizione i di sequenza > 0)
+            ALLORA num_positivi = num_positivi + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE individuare_nulli
+
+INPUT
+sequenza, sequenza di N numeri in cui individuare quelli nulli, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+num_nulli, numero di valori valori nulli individuati nella sequenza, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    num_nulli = 0
+    i = 1
+    MENTRE (i <= N)
+        SE (elemento in posizione i di sequenza = 0)
+            ALLORA num_nulli = num_nulli + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE individuare_negativi
+
+INPUT
+sequenza, sequenza di N numeri in cui individuare quelli negativi, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+num_negativi, numero di valori negativi individuati nella sequenza, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    num_negativi = 0
+    i = 1
+    MENTRE (i <= N)
+        SE (elemento in posizione i di sequenza < 0)
+            ALLORA num_negativi = num_negativi + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE pari
+
+INPUT
+n, numero di cui verificare se è pari o meno
+
+OUTPUT
+esito, indica se il numero ricevuto in input è pari o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    SE (n < 0)
+        ALLORA n = -n
+    FINE
+    MENTRE (n > 0)
+        n = n - 2
+        SE (n = 0)
+            ALLORA esito = VERO
+            ALTRIMENTI esito = FALSO
+        FINE
+    FINE
+FINE
+ 
+
+FUNZIONE individuare_pari
+
+INPUT
+sequenza, sequenza di N numeri in cui individuare quelli pari, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+num_pari, numero di valori pari individuati nella sequenza, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    num_pari = 0
+    i = 1
+    MENTRE (i <= N)
+        SE (pari(elemento di sequenza in posizione i) = VERO)
+            ALLORA num_pari = num_pari + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+FUNZIONE individuare_dispari
+
+INPUT
+sequenza, sequenza di N numeri in cui individuare quelli dispari, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+num_dispari, numero di valori dispari individuati nella sequenza, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    num_dispari = 0
+    i = 1
+    MENTRE (i <= N)
+        SE (pari(elemento di sequenza in posizione i) = FALSO)
+            ALLORA num_dispari = num_dispari + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE analizzare_ordine_crecente
+
+INPUT
+sequenza, sequenza di N numeri di cui analizzare se è crescente o meno, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+esito, indica se la sequenza analizzata è crescente o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    esito = VERO
+    MENTRE (i < N) AND (esito = VERO)
+        SE (elemento in posizione i di sequenza >= elemento in posizione i + 1 di sequenza)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE 
+
+
+FUNZIONE analizzare_ordine_decrecente
+
+INPUT
+sequenza, sequenza di N numeri di cui analizzare se è decrescente o meno, array a 1 dimensione di interi
+N, dimensione dell'array, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nell'array, naturale >0
+
+OUTPUT
+esito, indica se la sequenza analizzata è decrescente o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    esito = VERO
+    MENTRE (i < N) AND (esito = VERO)
+        SE (elemento in posizione i di sequenza <= elemento in posizione i + 1 di sequenza)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

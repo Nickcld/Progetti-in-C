@@ -1,0 +1,92 @@
+Realizzare una funzione che riceve come parametro di input una matrice di numeri interi minori di 10 e individua le righe che contengono tre elementi consecutivi che abbiano valori successivi.
+
+FUNZIONE consecutivi_successivi
+
+INPUT
+elenco, elenco di interi in cui verificare se ci sono tre elementi consecutivi successivi, array a 1 dimensione di interi
+dimensione, lunghezza di elenco, naturale >0
+
+LAVORO
+i, indica le posizioni nell'elenco, naturale >0
+successivi, contatore dei valori successivi trovati, naturale >=0
+MAX, numero massimo di valori successivi da trovare per individuare la colonna, costante = 2
+
+
+OUTPUT
+esito, indica se sono stati trovati o meno tre valori consecutivi successivi nell'elenco, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    successivi = 0
+    esito = FALSO
+    MENTRE (i < dimensione) AND (esito = FALSO)
+        SE (elemento in posizione i + 1 di elenco = elemento in posizione i di elenco + 1)
+            ALLORA successivi = successivi + 1
+            SE (successivi = MAX)
+                ALLORA esito = VERO
+            FINE
+        ALTRIMENTI successivi = 0
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE individuare_righe
+
+INPUT
+matrice, matrice di interi in cui individuare le righe con tre elementi consecutivi successivi, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, indica le righe della matrice, naturale >0
+j, indica le colonne della matrice, naturale >0
+NESSUNA_RIGA, indica che nessuna riga contenente tre elementi consecutivi successivi è stata ancora individuata, costante = 0
+riga_corrente, array contenente gli elementi della riga i-esima corrente, array di interi a 1 dimensione
+
+OUTPUT
+riga_trovata, indica la riga con tre elementi consecutivi successivi che è stata individuata nella matrice, naturale >0
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    riga_trovata = NESSUNA_RIGA
+    MENTRE (i <= righe)
+        j = 1
+        MENTRE (j <= colonne)
+            elemento di riga_corrente in posizione j = elemento di matrice in posizione i,j
+            j = j + 1
+        FINE
+        SE (consecutivi_successivi(riga_corrente, colonne) = VERO)
+            ALLORA riga_trovata = i
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

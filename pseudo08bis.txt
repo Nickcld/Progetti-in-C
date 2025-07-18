@@ -1,0 +1,40 @@
+Realizzare una funzione che riceve come parametri di input due numeri interi n > 0 e k > 1 e costruisce un elenco A di n numeri interi casuali minori di 100 che non siano multipli di k.
+
+FUNZIONE costruire_elenco
+
+INPUT
+n, dimensione dell'elenco A da creare, naturale >0
+k, numero di cui non devono essere presenti multipli nell'elenco A da creare, naturale >1
+
+LAVORO
+i, individua le posizioni degli elementi nell'elenco da creare, naturale >0
+r, numero random generato attraverso una formula casuale, intero <100
+temp, variabile utile a verificare se r è multiplo di k o meno, intero <100
+base, numero compreso nella formula di generazione di un numero casuale, intero
+
+OUTPUT
+elenco, elenco di interi casuali minori di 100 privo di multipli di k, array a 1 dimensione di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= n)
+        r = ((base + 4) * (base - 1) * (base + 3)) * 3
+        MENTRE (r > 100)
+            r = r - 100
+        FINE
+        temp = r
+        MENTRE (temp > 0)
+            temp = temp - k
+        FINE
+        SE (temp < 0)
+            ALLORA elemento in posizione i di elenco = r
+                   i = i + 1
+        FINE
+        base = base + 1
+    FINE
+FINE
+        
+    
+

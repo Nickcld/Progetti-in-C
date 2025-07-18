@@ -1,0 +1,3 @@
+Studente con la media migliore: Davide Fornelli (Matricola 91026) con media 25.67
+Studente con il voto massimo ottenuto in un esame: Davide Fornelli (matricola 91026) con voto 27
+Studente con più esami sostenuti: Francesco Cavaliere (matricola 74220) con 3 esami

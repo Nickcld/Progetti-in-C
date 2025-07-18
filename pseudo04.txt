@@ -1,0 +1,82 @@
+Realizzare una sorta di cifrario di Cesare:
+Data una parola P di n lettere ottenere una parola C in cui ogni lettera sia sostituita dalla lettera x posti avanti nell’alfabeto.
+Considerare l’alfabeto come una struttura circolare.
+
+FUNZIONE cifrareParola
+
+INPUT
+P, parola da cifrare, stringa
+dimensioneP, lunghezza della parola da cifrare, naturale >= 0
+alfabeto, alfabeto italiano, array di caratteri
+dimensioneAlfabeto, lunghezza dell'alfabeto italiano, naturale >0
+
+LAVORO
+i, indice che scorre le posizioni dei caratteri di P, naturale >0 <= dimensioneP
+j, indice che scorre le posizioni delle lettere dell'alfabeto, naturale >0 <= 21
+posP, indica la posizione nell'alfabeto di una lettera di P, naturale >0 <= 21
+k, indice che individua le posizioni dei caratteri della parola cifrata, naturale >0 <=dimensioneP
+trovato, variabile che indica se è stato trovato il carattere corrispondente nell'alfabeto, booleano
+
+OUTPUT
+C, parola cifrata, stringa
+
+ALGORITMO
+
+INIZIO
+i = 1 
+k = 1 
+MENTRE (i <= dimensioneP) AND (k <= dimensioneP)
+    j = 1 
+    trovato = FALSO
+    MENTRE (j <= dimensioneAlfabeto) AND (trovato = FALSO)
+        SE (elemento in posizione i di P = elemento in posizione j di alfabeto)
+            ALLORA 
+            posP = j
+            trovato = VERO
+            SE (posP = dimensioneAlfabeto)
+                ALLORA elemento in posizione k di C = elemento in posizione 1 di alfabeto
+                ALTRIMENTI elemento in posizione k di C = elemento in posizione posP + 1 di alfabeto
+            FINE
+            ALTRIMENTI j = j + 1
+        FINE
+    FINE
+i = i + 1
+k = k + 1
+FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

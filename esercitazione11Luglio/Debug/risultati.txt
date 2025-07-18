@@ -1,0 +1,3 @@
+Massimo: 78
+Minimo: 1
+Media: 25.88

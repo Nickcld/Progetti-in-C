@@ -1,0 +1,98 @@
+Dati in input due array di numeri floating point: A composto da n numeri disposti in ordine crescente e B composto da m numeri disposti in ordine casuale, inserire al centro di A i numeri presenti in B mantenendo l'ordine crescente senza l'uso di un terzo array di appoggio.
+
+FUNZIONE ordinare_vettore
+
+INPUT
+B, vettore costituito da m numeri disposti in ordine casuale da ordinare, array a 1 dimensione di reali
+m, dimensione del vettore B, naturale >0
+
+LAVORO
+j, individua le posizioni degli elementi nel vettore, naturale >0
+temp, variabile utile a memorizzare il valore da ordinare, reale
+ordinato, indica se il vettore è ordinato o meno, booleano
+
+OUTPUT
+B, vettore cosituito da m numeri disposti in ordine crescente, array a 1 dimensione di reali
+
+ALGORITMO
+
+INIZIO
+    ordinato = FALSO
+    j = 1
+    MENTRE (ordinato = FALSO)
+        j = 1
+        ordinato = VERO
+        MENTRE (j < m)
+            SE (elemento di B in posizione j > elemento di B in posizione j + 1)
+                ALLORA temp = elemento di B in posizione j
+                       elemento di B in posizione j = elemento di B in posizione j + 1
+                       elemento di B in posizione j + 1 = temp
+                       ordinato = FALSO
+            FINE
+            j = j + 1
+        FINE
+    FINE
+FINE
+
+FUNZIONE fondere_vettori
+
+INPUT
+A, vettore composto da n numeri disposti in ordine crescente, array a 1 dimensione di reali
+n, dimensione di A, naturale >0
+B, vettore composto da m numeri disposti in ordine crescente, array a 1 dimensione di reali
+m, dimensione di B, naturale >0
+
+LAVORO
+nuova_dimensione, valore rappresentante la nuova dimensione di A data dalla somma delle dimensioni originali di A e B, naturale
+i, individua le posizioni degli elementi del vettore A, naturale >0
+j, individua le posizioni degli elementi del vettore B, naturale >0
+temp, variabile utile a memorizzare il valore da ordinare, reale
+ordinato, indica se il vettore contenente gli elementi di A e di B è ordinato o meno, booleano
+
+OUTPUT
+A, vettore A costituito dagli elementi di A e di B disposti in ordine crescente, array a 1 dimensione di reali
+
+ALGORITMO
+
+INIZIO
+    nuova_dimensione = n + m
+    i = nuova_dimensione
+    j = m
+    MENTRE (i > n) AND (j >= 1)
+        elemento in posizione i di A = elemento in posizione j di B
+        i = i - 1
+        j = j - 1
+    FINE
+    ordinato = FALSO
+    i = 1
+    MENTRE (ordinato = FALSO)
+        i = 1
+        ordinato = VERO
+        MENTRE (i < nuova_dimensione)
+            SE (elemento di A in posizione i > elemento di A in posizione i + 1)
+                ALLORA temp = elemento di A in posizione i
+                       elemento di A in posizione i = elemento di A in posizione i + 1
+                       elemento di A in posizione i + 1 = temp
+                       ordinato = FALSO
+            FINE
+            i = i + 1
+        FINE
+    FINE
+FINE
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

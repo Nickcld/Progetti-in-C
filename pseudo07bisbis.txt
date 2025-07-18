@@ -1,0 +1,164 @@
+Realizzare un programma che verifichi se una matrice è un quadrato magico o meno.
+
+FUNZIONE confrontare_somme_righe
+
+INPUT
+matrice, matrice di cui confrontare le somme dei valori di ogni riga, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, indica le righe della matrice, naturale >0
+j, indica le colonne della matrice, naturale >0
+somma_riferimento, indica la somma dei valori presenti sulla prima riga e viene usato come riferimento per il confronto con le somme delle altre righe, intero
+somma_valori_riga, indica la somma dei valori presenti su una riga della matrice, intero
+
+OUTPUT
+esito, indica se le somme dei valori si ogni riga della matrice corrispondono allo stesso valore o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    j = 1
+    somma_riferimento = 0
+    MENTRE (j <= colonne)
+        somma_riferimento = somma_riferimento + elemento di matrice in posizione i,j
+        j = j + 1
+    FINE
+    i = i + 1
+    esito = VERO
+    MENTRE (i <= righe) AND (esito = VERO)
+        j = 1
+        somma_valori_riga = 0
+        MENTRE (j <= colonne)
+            somma_valori_riga = somma_valori_riga + elemento di matrice in posizione i,j
+        FINE
+        SE (somma_valori_riga <> somma_riferimento)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE 
+
+FUNZIONE confrontare_somme_colonne
+
+INPUT
+matrice, matrice di cui confrontare le somme dei valori di ogni colonna, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, indica le righe della matrice, naturale >0
+j, indica le colonne della matrice, naturale >0
+somma_riferimento, indica la somma dei valori presenti sulla prima colonna e viene usato come riferimento per il confronto con le somme delle altre colonne, intero
+somma_valori_colonna, indica la somma dei valori presenti su una colonna della matrice, intero
+
+OUTPUT
+esito, indica se le somme dei valori si ogni colonna della matrice corrispondono allo stesso valore o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    j = 1
+    somma_riferimento = 0
+    MENTRE (i <= righe)
+        somma_riferimento = somma_riferimento + elemento di matrice in posizione i,j
+        i = i + 1
+    FINE
+    j = j + 1
+    esito = VERO
+    MENTRE (j <= colonne) AND (esito = VERO)
+        i = 1
+        somma_valori_colonna = 0
+        MENTRE (i <= righe)
+            somma_valori_colonna = somma_valori_colonna + elemento di matrice in posizione i,j
+        FINE
+        SE (somma_valori_colonna <> somma_riferimento)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+FUNZIONE confrontare_somme_diagonali
+
+INPUT
+matrice, matrice di cui confrontare le somme dei valori presenti sulle due diagonali, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, indica le righe della matrice, naturale >0
+j, indica le colonne della matrice, naturale >0
+somma_riferimento, indica la somma dei valori presenti sulla diagonale principale e viene usato come riferimento per il confronto con la diagonale secondaria, intero
+somma_valori_secondaria, indica la somma dei valori presenti sulla diagonale secondaria, intero
+
+OUTPUT
+esito, indica se le somme dei valori presenti sulle due diagonali corrispondono allo stesso valore o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    j = 1
+    esito = VERO
+    somma_riferimento = 0
+    MENTRE (i <= righe) AND (j <= colonne)
+        somma_riferimento = somma_riferimento + elemento di matrice in posizione i,j
+        i = i + 1
+        j = j + 1
+    FINE
+    i = 1
+    j = colonne
+    somma_valori_secondaria = 0
+    MENTRE (i <= righe) AND (j >= 1)
+        somma_valori_secondaria = somma_valori_secondaria + elemento di matrice in posizione i,j
+        i = i + 1
+        j = j - 1
+    FINE
+    SE (somma_valori_secondaria <> somma_riferimento)
+        ALLORA esito = FALSO
+    FINE
+FINE
+
+FUNZIONE verificare_quadrato_magico
+
+INPUT
+matrice, matrice di cui verificare se è un quadrato magico o meno, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+OUTPUT
+esito, indica se la matrice analizzata è un quadrato magico o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    SE (confrontare_somme_righe(matrice, righe, colonne) = VERO) AND (confrontare_somme_colonne(matrice, righe, colonne) = VERO) AND (confrontare_somme_diagonali(matrice, righe, colonne) = VERO)
+        ALLORA esito = VERO
+        ALTRIMENTI esito = FALSO
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

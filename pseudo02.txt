@@ -1,0 +1,43 @@
+Realizzare l’algoritmo di una funzione che valuti quanti caratteri iniziali sono in
+comune tra due parole date.
+Ad esempio:
+• se la funzione ricevesse in input le parole "ciao" e "cielo" dovrebbe restituire
+2 in quanto i primi due caratteri sono identici.
+• se la funzione ricevesse in input le parole "ciao" e "salve" dovrebbe restituire
+0 in quanto nessun carattere iniziale è in comune.
+
+
+
+FUNZIONE confrontare_parole
+
+INPUT
+parola_1, prima parola da confrontare con la seconda per trovare eventuali caratteri iniziali in comune, stringa
+parola_2, seconda parola da confrontare con la prima per trovare eventuali caratteri iniziali in comune, stringa
+dimensione_1, lunghezza della prima parola, naturale >=0
+dimensione_2, lunghezza della seconda parola, naturale >=0
+
+LAVORO
+i, indice che scorre i caratteri di parola_1, naturale >0
+j, indice che scorre i caratteri di parola_2, naturale >0
+Uguali, variabile che indica se l'ultima lettera analizzata di parola_1 è uguale alla corrispondente di parola_2, booleano
+
+OUTPUT
+comuni, variabile che indica il numero di lettere iniziali in comune tra parola_1 e parola_2, naturale >=0
+
+
+ALGORITMO
+
+INIZIO
+comuni = 0
+Uguali = VERO
+i = 1
+j = 1
+MENTRE (i <= dimensione_1) AND (j <= dimensione_2) AND (Uguali = VERO)
+    SE (elemento di parola_1 in posizione i = elemento di parola_2 in posizione j)
+        ALLORA comuni = comuni + 1
+        ALTRIMENTI Uguali = FALSO
+    FINE
+    i = i + 1
+    j = j + 1
+FINE
+FINE

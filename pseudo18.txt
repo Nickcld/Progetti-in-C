@@ -1,0 +1,127 @@
+Realizzare un programma che, dato in input un vettore di caratteri, individui e stampi il carattere che è seguito più frequentemente dal carattere successivo in ordine alfabetico.
+
+FUNZIONE successivo_alfabeto
+
+INPUT
+prima_lettera, prima lettera di cui vedere se la seconda ne è la successiva nell' ordine alfabetico, carattere
+seconda_lettera, seconda lettera di cui vedere se è successiva alla prima nell'ordine alfabetico, carattere
+alfabeto, alfabeto latino, array a 1 dimensione di caratteri
+
+LAVORO
+DIM_ALFABETO, lunghezza dell'alfabeto latino, costante = 26
+i, individua le posizioni delle lettere nell'alfabeto, naturale >0
+lettera_successiva, lettera successiva ad un altra nell'ordine alfabetico, carattere
+
+OUTPUT
+esito, indica se la seconda lettera è successiva alla prima nell'ordine alfabetico o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= DIM_ALFABETO)
+        SE (elemento di alfabeto in posizione i = prima_lettera)
+            SE (i = DIM_ALFABETO)
+                lettera_successiva = elemento di alfabeto in posizione 1
+            ALTRIMENTI
+                lettera_successiva =
+elemento di alfabeto in posizione i + 1
+            FINE
+
+            SE (seconda_lettera = lettera_successiva)
+                esito = VERO
+            ALTRIMENTI
+                esito = FALSO
+            FINE
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE ricorrenze_coppia
+
+INPUT
+vettore, vettore di caratteri in cui contare quante volte una coppia di successivi in ordine alfabetico compare, vettore a 1 dimensione di caratteri
+dim_vettore, dimensione del vettore, naturale >0
+alfabeto, alfabeto latino, array a 1 dimensione di caratteri
+l1, prima lettera della coppia, carattere
+l2, seconda lettere della coppia, carattere
+
+LAVORO
+i, individua le posizioni dei caratteri nel vettore, naturale >0
+primo, variabile temporanea usata per memorizzare il primo elemento della coppia attualmente analizzata nel vettore, carattere
+secondo, variabile temporanea usata per memorizzare il secondo elemento della coppia attualmente analizzata nel vettore, carattere
+
+OUTPUT
+num_ricorrenze, numero di ricorrenze della coppia di successivi in ordine alfabetico nel vettore, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    num_ricorrenze = 0
+    MENTRE (i < dim_vettore)
+        primo = elemento di vettore in posizione i
+        secondo = elemento di vettore in posizione i + 1
+
+        SE (primo = l1) AND (secondo = l2)
+            SE (successivo_alfabeto(primo, secondo, alfabeto) = VERO)
+                ALLORA num_ricorrenze = num_ricorrenze + 1
+            FINE
+        FINE
+
+        i = i + 1
+    FINE
+FINE
+
+
+
+FUNZIONE individuare_carattere
+
+INPUT  
+vettore, vettore di caratteri in cui individuare il carattere più frequentemente seguito dal carattere successivo in ordine alfabetico, array a 1 dimensione di caratteri  
+dim_vettore, dimensione del vettore, naturale >0
+alfabeto, alfabeto latino, array a 1 dimensione di caratteri
+
+LAVORO  
+i, individua le posizioni dei caratteri nel vettore, naturale >0  
+max_ricorrenze, contiene il numero massimo di ricorrenze finora trovato, naturale ≥ 0
+ricorrenze_attuali, numero di ricorrenze della coppia corrente, naturale >=0
+
+OUTPUT  
+carattere_ricorrente, carattere che,  nel vettore,  è seguito più frequentemente da una lettera che lo segue nell’ordine alfabetico, carattere  
+
+ALGORITMO  
+
+INIZIO
+    max_ricorrenze = 0
+    carattere_ricorrente = elemento in posizione 1 di vettore
+    i = 1
+    MENTRE (i < dim_vettore)
+      ricorrenze_attuali = ricorrenze_coppia(vettore, dim_vettore, elemento in posizione i di vettore, elemento in posizione i + 1 di vettore, alfabeto)
+      SE (ricorrenze_attuali > max_ricorrenze)
+          ALLORA max_ricorrenze = ricorrenze_attuali 
+                                          carattere_ricorrente = elemento in posizione i di vettore
+                FINE
+                i = i + 1
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+

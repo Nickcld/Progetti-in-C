@@ -1,0 +1,99 @@
+Realizzare un programma che, ricevuto come parametro di input un vettore di interi, lo ordini in modo tale che i numeri multipli di 3 vengano disposti in fondo al vettore.
+
+FUNZIONE multiplo_di_3
+
+INPUT
+num, numero di cui verificare se è multiplo di 3 o meno, intero
+
+OUTPUT
+esito, indica se num è multiplo di 3 o meno, boleano
+
+ALGORITMO
+
+INIZIO
+    SE (num < 0)
+        num = - num
+    FINE
+    MENTRE (num > 0)
+        num = num - 3
+    FINE
+    SE (num = 0)
+        ALLORA esito = VERO
+        ALTRIMENTI esito = FALSO
+    FINE
+FINE
+
+FUNZIONE riordinare_vettore
+
+INPUT
+vettore, vettore di interi in cui individuare i multipli di 3 e spostarli in fondo al vettore, array a 1 dimensione di interi
+dimensione, lunghezza di vettore, naturale >0
+
+LAVORO
+i, indice che individua le posizioni nel vettore dalla prima verso il centro, naturale >0
+j, indice che individua le posizioni nel vettore dall'ultima verso il centro, naturale <=dimensione
+temp, variabile in cui memorizzare il multiplo di 3 da spostare, intero
+
+OUTPUT
+vettore, vettore in cui i multipli di 3 sono stati spostati alle ultime posizioni, array a 1 dimensione di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    j = dimensione
+    MENTRE (i < j)
+        MENTRE (i < j) AND (multiplo_di_3(elemento di vettore in posizione i) = FALSO)
+            i = i + 1
+        FINE
+        MENTRE (i < j) AND (multiplo_di_3(elemento di vettore in posizione j) = VERO)
+            j = j - 1
+        FINE
+        SE (i < j)
+            temp = elemento di vettore in posizione i
+            elemento di vettore in posizione i = elemento di vettore in posizione j
+            elemento di vettore in posizione j = temp
+            i = i + 1
+            j = j - 1
+        FINE
+    FINE
+FINE
+            
+        
+             
+                   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

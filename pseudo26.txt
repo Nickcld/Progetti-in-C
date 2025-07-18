@@ -1,0 +1,120 @@
+/*Un anagramma è una parola ottenuta riordinando le lettere di un'altra, usando esattamente le stesse lettere e lo stesso numero di occorrenze,
+ma in un ordine diverso (ad esempio "roma" e "amor"). Scrivere un programma che chieda all'utente di inserire due parole e verifichi se sono
+anagrammi o meno.*/
+
+
+FUNZIONE calcolare_ricorrenze
+
+INPUT
+parola, parola in cui calcolare le ricorrenze di una determinata lettera, stringa
+dimensione_parola, lunghezza della parola, naturale >0
+lettera, lettera di cui calcolarne le ricorrenze nella parola, carattere
+
+LAVORO
+i, indica la posizione dei caratteri all'interno di parola, naturale >0
+
+OUTPUT
+ricorrenze, numero di ricorrenze di lettera all'interno di parola, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    ricorrenze = 0
+    i = 1
+    MENTRE (i <= dimensione_parola)
+        SE (elemento di parola in posizione i = lettera)
+            ALLORA ricorrenze = ricorrenze + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+FUNZIONE verificare_anagramma
+
+INPUT
+parola_1, prima parola di cui verificare se è anagramma dell'altra, stringa
+parola_2, seconda parola di cui verificare se è anagramma dell'altra, stringa
+
+LAVORO
+dimensione_1, lunghezza di parola_1, naturale >=0
+dimensione_2, lunghezza di parola_2, naturale >=0
+i, indica le posizioni dei caratteri all'interno di parola_1, naturale >0
+j, indica le posizioni dei caratteri all'interno di parola_2, naturale >0
+trovata, indica se una lettera di parola_1 è stata trovata all'interno di parola_2, booleano
+
+OUTPUT
+esito, indica se le due stringhe sono anagrammi o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    esito = VERO
+    dimensione_1 = lunghezza_stringa(parola_1)
+    dimensione_2 = lunghezza_stringa(parola_2)
+    SE (dimensione_1 <> dimensione_2)
+        ALLORA esito = FALSO
+    FINE
+    i = 1
+    MENTRE (i <= dimensione_1)
+        j = 1
+        trovata = FALSO
+        MENTRE (j <= dimensione_2) AND (esito = VERO)
+            SE (elemento di parola_1 in posizione i = elemento di parola_2 in posizione j)
+                ALLORA trovata = VERO
+                SE (calcolare_ricorrenze(parola_1, dimensione_1, elemento di parola_1 in posizione i) <> calcolare_ricorrenze(parola_2, dimensione_2, elemento di parola_2 in posizione j))
+                    ALLORA esito = FALSO
+                FINE
+            FINE
+            j = j + 1
+        FINE
+        SE (trovata = FALSO)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    
+
+
+
+
+
+
+
+
+
+
+
+

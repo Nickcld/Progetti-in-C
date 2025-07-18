@@ -1,0 +1,82 @@
+Scrivere una funzione che, preso in input un vettore di numeri interi, lo modifichi (senza creare un vettore di appoggio) in modo che tutti i numeri pari precedano tutti i numeri dispari. L'ordine relativo tra i numeri pari non è importante, così come non è importante l'ordine relativo tra i numeri dispari.
+Esempio: Se il vettore in input è V = [3, 5, 2, 8, 1, 4, 7], un possibile risultato dopo l'esecuzione della procedura è V = [4, 8, 2, 5, 1, 3, 7].
+
+FUNZIONE pari
+
+INPUT
+num, numero di cui verificare se è pari o meno, intero
+
+OUTPUT
+esito, indica se il numero analizzato è pari o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    SE (num < 0)
+        num = - num
+    FINE
+    MENTRE (num > 0)
+        num = num - 2
+    FINE
+    SE (num = 0)
+        ALLORA esito = VERO
+        ALTRIMENTI esito = FALSO
+    FINE
+FINE
+
+
+
+FUNZIONE ordinare_vettore
+
+INPUT
+vettore, elenco di interi da riordinare in modo tale che i numeri pari precedano quelli dispari, array a 1 dimensione di interi
+dimensione, lunghezza dell'elenco, naturale >=0
+
+LAVORO
+i, individua le posizioni del vettore dalla prima verso il centro, naturale >0
+j, individua le posizioni del vettore dall'ultima verso il centro, naturale <=dimensione
+temp, variabile temporanea utile a memorizzare il valore da scambiare, intero
+
+OUTPUT
+vettore, vettore originale di cui è stata modificata la disposizione dei numeri mettendo tutti quelli pari prima di quelli dispari, array a 1 dimensione di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    j = dimensione
+    MENTRE (i - j)
+        MENTRE (i < j) AND (pari(elemento di vettore in posizione i) = VERO)
+            i = i + 1
+        FINE
+        MENTRE (i < j) AND (pari(elemento di vettore in posizione j) = FALSO)
+            j = j - 1
+        FINE
+        SE (i < j)
+            temp = elemento di vettore in posizione i
+            elemento di vettore in posizione i = elemento di vettore in posizione j
+            elemento di vettore in posizione j = temp
+            i = i + 1
+            j = j - 1
+        FINE
+    FINE
+FINE  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+

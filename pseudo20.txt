@@ -1,0 +1,68 @@
+Scrivere una funzione che riceve in input un array di numeri interi A e verifica se gli elementi formano una sequenza alternata di pari e dispari (es. pari, dispari, pari, dispari...) oppure viceversa. Restituisce 1 se la condizione è rispettata, 0 altrimenti.
+
+
+FUNZIONE pari
+
+INPUT
+n, numero di cui verificare se è pari o dispari, intero
+
+OUTPUT
+esito, indica se il numero preso in input è pari o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    SE (n < 0)
+        ALLORA n = -n
+    FINE
+    MENTRE (n > 0)
+        n = n - 2
+    FINE
+    SE (n = 0)
+        ALLORA esito = VERO
+        ALTRIMENTI esito = FALSO
+    FINE
+FINE
+
+
+FUNZIONE verificare_alternanza
+
+INPUT
+vettore, vettore di interi di cui verificare se costituisce una serie alternata di valori pari e dispari (o viceversa), array a 1 dimensione di interi
+dim_vettore, dimensione del vettore, naturale >0
+
+LAVORO
+i, individua le posizioni degli elementi nel vettore, naturale >0
+
+OUTPUT
+esito, indica se il vettore costituisce una serie alternata di valori pari e dispari (o viceversa) o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    esito = VERO
+    MENTRE (i < dim_vettore) AND (esito = VERO)
+        SE (pari(elemento in posizione i di vettore) = VERO) AND (pari(elemento in posizione i + 1 di vettore) = VERO)
+            ALLORA esito = FALSO
+        FINE
+        SE (pari(elemento in posizione i di vettore) = FALSO) AND (pari(elemento in posizione i + 1 di vettore) = FALSO)
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

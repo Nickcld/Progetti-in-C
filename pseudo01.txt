@@ -1,0 +1,35 @@
+Realizzare lo pseudocodice e il codice di una funzione che riceve in input una stringa e verifica se e’ palindroma o no.
+Nella realizzazione del codice, il main deve:
+1. Richiedere all’utente la stringa
+2. Richiamare la funzione passando in input la stringa e assegnare a una variabile il risultato della funzione
+3. Stampare un messaggio in base al valore restituito dalla funzione
+
+
+
+FUNZIONE verificare_stringa
+
+INPUT
+S, stringa di cui verificare se è palindroma o meno, stringa
+dimensioneStringa, numero di caratteri contenuti nella stringa da verificare, naturale >=0
+
+LAVORO
+i, indice per scorrere la stringa dalla prima posizione verso il centro, naturale >=1
+j, indice per scorrere la stringa dall'ultima posizione verso il centro, naturale <= dimensioneStringa
+
+OUTPUT
+Esito, variabile che indica se la stringa ricevuta in input è palindroma o meno, booleano
+
+ALGORITMO
+
+INIZIO
+i = 1
+j = dimensioneStringa
+Esito = VERO
+MENTRE (i < j AND Esito = VERO)
+    SE (elemento in posizione i di S <> elemento in posizione j di S)
+        ALLORA Esito = FALSO
+    FINE
+    i = i + 1
+    j = j - 1
+FINE
+FINE

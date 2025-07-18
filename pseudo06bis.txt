@@ -1,0 +1,89 @@
+Realizzare una funzione che riceve come parametro di input una matrice di numeri interi minori di 10 e individua le colonne che contengono tre elementi consecutivi che abbiano valori successivi.
+
+
+FUNZIONE consecutivi_successivi
+
+INPUT
+elenco, elenco in cui verificare se ci sono tre elementi consecutivi successivi, array a 1 dimensione di interi
+dimensione, lunghezza di elenco, naturale >0
+
+LAVORO
+succesivi, contatore dei valori consecutivi successivi trovati nell'elenco, naturale >=0
+i, individua le posizioni degli elementi nell'elenco, naturale >0
+MAX, numero massimo di elementi successivi da dover individuare per far sì che la funzione restituisca esito positivo, costante = 2
+
+OUTPUT
+esito, indica se sono stati trovati o meno tre valori consecutivi successivi nell'elenco, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    successivi = 0
+    esito = FALSO
+    MENTRE (i < dimensione) AND (esito = FALSO)
+        SE (elemento di elenco in posizione i = elemento di elenco in posizione i+1 - 1)
+            ALLORA successivi = successivi + 1
+            SE (successivi = MAX)
+                ALLORA esito = VERO
+            FINE
+        ALTRIMENTI successivi = 0
+        FINE
+        i = i + 1
+    FINE
+FINE 
+
+FUNZIONE individuare_colonna
+
+INPUT
+matrice, matrice in cui individuare la colonna con tre elementi consecutivi successivi, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, indica le righe della matrice, naturale >0
+j, indica le colonne della matrice, naturale >0
+NESSUNA_COLONNA, indica che nessuna colonna con tre elementi consecutivi successivi è stata ancora individuata, costante = 0
+colonna_corrente, array contenente gli elementi della colonna j-esima corrente, array a 1 dimensione di interi
+
+OUTPUT
+colonna_trovata, indice della colonna con tre elementi consecutivi successivi che è stata individuata, naturale >0
+
+ALGORITMO
+
+INIZIO
+    j = 1
+    colonna_trovata = NESSUNA_COLONNA
+    MENTRE (j <= colonne) AND (colonna_trovata = NESSUNA_COLONNA)
+        i = 1
+        MENTRE (i <= righe)
+            elemento di colonna_corrente in posizione i = elemento di matrice in posizione i,j
+            i = i + 1
+        FINE
+        SE (consecutivi_successivi(colonna_corrente, righe) = VERO)
+            ALLORA colonna_trovata = j
+        FINE
+        j = j + 1
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

@@ -1,0 +1,57 @@
+Realizzare un programma che, prese in input due stringhe: 
+- la prima contenente il nome e il cognome di una persona separata da uno o
+piu spazi; 
+- la seconda contenente il soprannome di una persona,
+restituisca in output una nuova stringa in cui tra il nome ed il cognome viene inserito il soprannome; inoltre devono essere eliminati gli spazi vuoti.
+
+
+FUNZIONE generare_stringa
+
+INPUT
+stringa_1, prima stringa contenente il nome e il cognome di una persona separati da uno spazio, stringa
+stringa_2, seconda stringa contenente il soprannome della persona, stringa
+dimensione_1, lunghezza della prima stringa, naturale >0
+dimensione_2, lunghezza della seconda stringa, naturale >0
+
+LAVORO
+i, individua le posizioni dei caratteri di stringa_1, naturale >0
+j, individua le posizioni dei caratteri di stringa_2, naturale >0
+dimensione_nuova_stringa, lunghezza della stringa da generare, naturale >0
+k, individua le posizioni dei caratteri della nuova stringa da generare, naturale >0
+
+OUTPUT
+nuova_stringa, stringa in cui tra il nome ed il cognome viene inserito il soprannome (con gli spazi vuoti eliminati), stringa
+
+ALGORITMO
+
+INIZIO
+    dimensione_nuova_stringa = (dimensione_1 + dimensione_2) - 1
+    i = 1
+    k = 1
+    MENTRE (elemento in posizione i di stringa_1 <> ' ') AND (k < dimensione_nuova_stringa)
+        elemento in posizione k di nuova_stringa = elemento in posizione i di stringa 1
+        i = i + 1
+        k = k + 1
+    FINE
+    j = 1
+    MENTRE (j <= dimensione_2) AND (k < dimensione_nuova_stringa)
+        elemento in posizione k di nuova_stringa = elemento in posizione j di stringa_2
+        j = j + 1
+        k = k + 1
+    FINE
+    MENTRE (elemento in posizione i di stringa_1 = ' ')
+        i = i + 1
+    FINE
+    MENTRE (i <= dimensione_1) AND (k <= dimensione_nuova_stringa)
+        elemento in posizione k di nuova_stringa = elemento in posizione i di stringa_1
+        i = i + 1
+        k = k + 1
+    FINE
+FINE
+    
+        
+    
+
+
+
+

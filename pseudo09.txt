@@ -1,0 +1,116 @@
+Realizzare una funzione che riceve come parametro di input una matrice di n righe ed m colonne di numeri interi casuali compresi tra 0 e 20 e individua la colonna in cui la massima differenza (in valore assoluto) tra due elementi consecutivi sia minima. Esempio: 
+Consideriamo la seguente matrice costituita da n = 4 righe ed m = 3 colonne:
+A=
+15 13 7
+ 6 18 4
+11 4 12
+13 9 5
+La massima differenza tra gli elementi consecutivi della prima colonna è 9 = 15−6; per la seconda colonna è 14 = 18−4; per la terza è 8 = |4−12|. Quindi il programma deve stampare
+la terza colonna la cui massima differenza è minima.
+
+
+FUNZIONE valore_assoluto
+
+INPUT
+n, numero di cui calcolare il valore assoluto, intero
+
+OUTPUT
+n_val_assoluto, valore assoluto del numero ricevuto in input (segno positivo), naturale >=0
+
+ALGORITMO
+
+INIZIO
+    n_val_assoluto = 0
+    SE (n < 0)
+        ALLORA n_val_assoluto = n_val_assoluto + n * (-1)
+        ALTRIMENTI n_val_assoluto = n
+    FINE
+FINE
+
+FUNZIONE individuare_minima
+
+INPUT
+matrice, matrice in cui individuare la colonna in cui la massima differenza (in valore assoluto) tra due elementi consecutivi sia minima, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, indica le righe della matrice, naturale >0
+j, indica le colonne della matrice, naturale >0
+max_diff, massima differenza (in valore assoluto) tra elementi consecutivi individuata in una singola colonna, naturale >=0
+prima_colonna, indica se ci si trova sulla prima colonna  ed è utile per fare il confronto tra max_diff calcolata sulla prima colonna e max_diff calcolata sulle altre colonne, booleano
+
+OUTPUT
+minima, minima tra le massime differenze trovate nelle colonne della matrice, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    j = 1
+    max_diff = 0
+    minima = max_diff
+    prima_colonna = VERO
+    MENTRE (j <= colonne)
+        i = 1
+        max_diff = 0
+        MENTRE (i < righe)
+            SE (valore_assoluto(elemento di matrice in posizione i,j - elemento di matrice in posizione i+1,j) > max_diff)
+                                  ALLORA max_diff = valore_assoluto(elemento di matrice in posizione i,j - elemento di matrice in posizione i+1,j)
+                              FINE
+                    i = i + 1
+        FINE
+        SE (prima_colonna = VERO)
+                        ALLORA minima = max_diff
+                        prima_colonna = FALSO
+                    ALTRIMENTI 
+                        SE (max_diff < minima)
+                            ALLORA minima = max_diff
+                        FINE
+                    FINE
+           j = j + 1
+         FINE
+FINE
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

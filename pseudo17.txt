@@ -1,0 +1,86 @@
+Realizzare una funzione che riceve come parametro di input una matrice di numeri interi minori di 10 e individua le righe che contengono tre elementi consecutivi che abbiano valori successivi.
+
+FUNZIONE successivi
+
+INPUT
+n1, primo numero da confrontare col secondo per vedere se quest'ultimo è il suo successivo, intero
+n2, secondo numero da confrontare col primo per vedere se ne è successivo, intero
+
+
+OUTPUT
+esito, indica se due numeri sono consecutivi e successivi, booleano
+
+ALGORITMO
+
+INIZIO
+    SE (n1 = n2 - 1)
+        ALLORA esito = VERO
+        ALTRIMENTI esito = FALSO
+    FINE
+FINE               
+
+FUNZIONE controllare_matrice
+
+INPUT
+matrice, matrice di cui analizzare le righe e vedere se ci sono righe con tre elementi consecutivi con valori successivi, array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, individua le righe della matrice, naturale >0
+j, individua le colonne della matrice, naturale >0
+NESSUNA_RIGA, valore che indica che nessuna riga della matrice soddisfa la condizione, costante = 0
+contatore_consecutivi, contatore del numero di coppie consecutive successive trovate, naturale >=0
+MAX, numero di valori successivi da individuare per poter confermare che la riga soddisfa i requisiti richiesti, costante = 2
+
+OUTPUT
+riga_trovata, indice della riga con tre valori consecutivi successivi individuata, naturale >0
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    riga_trovata = NESSUNA_RIGA
+    MENTRE (i <= righe) AND (riga_trovata = NESSUNA_RIGA)
+        contatore_consecutivi = 0
+        j = 1
+        MENTRE (j < colonne) AND (riga_trovata = NESSUNA_RIGA)
+            SE (successivi(elemento in posizione i,j di matrice, elemento in posizione i,j+1 di matrice) = VERO)
+                ALLORA contatore_consecutivi = contatore_consecutivi + 1
+                ALTRIMENTI contatore_consecutivi = 0
+            FINE
+                SE (contatore_consecutivi = MAX)
+                    ALLORA riga_trovata = i
+                FINE
+                j = j + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

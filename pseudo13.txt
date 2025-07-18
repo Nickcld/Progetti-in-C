@@ -1,0 +1,151 @@
+Realizzare le operazioni di somma, e prodotto di 2 matrici, trasposta di una matrice e prodotto scalare di una matrice con uno scalare.
+La matrice deve essere realizzata con un vettore statico a 2 dimensioni.
+
+FUNZIONE somma_matrici
+
+INPUT
+matrice_1, prima matrice da sommare, array a 2 dimensioni di interi
+matrice_2, seconda matrice da sommare, array a 2 dimensioni di interi
+righe_1, numero di righe della prima matrice, naturale >0
+righe_2, numero di righe della seconda matrice, naturale >0
+colonne_1, numero di colonne della prima matrice, naturale >0
+colonne_2, numero di colonne della seconda matrice, naturale >0
+
+LAVORO
+i, individua le righe della matrice, naturale >0 <= righe_1
+j, individua le colonne della matrice, naturale >0 <= colonne_1
+
+OUTPUT
+matrice_somma, matrice somma di matrice_1 e matrice_2, array a 2 dimensioni di interi
+
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= righe_1)
+        j = 1
+        MENTRE (j <= colonne_1)
+            elemento di matrice_somma in posizione i,j = elemento di matrice_1 in posizione i,j + elemento di matrice_2 in posizione i,j
+            j = j + 1
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+FUNZIONE prodotto_matrici
+
+INPUT
+matrice_1, prima matrice da sommare, array a 2 dimensioni di interi
+matrice_2, seconda matrice da sommare, array a 2 dimensioni di interi
+righe_1, numero di righe della prima matrice, naturale >0
+righe_2, numero di righe della seconda matrice, naturale >0
+colonne_1, numero di colonne della prima matrice, naturale >0
+colonne_2, numero di colonne della seconda matrice, naturale >0
+
+LAVORO
+i, individua le righe di matrice_1, naturale >0 <= righe_1
+j, individua le colonne di matrice_2, naturale >0 <= colonne_2
+k, indice che scorre contemporaneamente la riga di matrice_1 e la colonna di matrice_2, 1 <= k <= colonne_1
+val, valore temporaneo per accumulo del prodotto scalare, intero
+
+OUTPUT
+matrice_prodotto, matrice prodotto di matrice_1 e matrice_2, array a 2 dimensioni di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= righe_1)
+        j = 1
+        MENTRE (j <= colonne_2)
+            val = 0
+            k = 1
+            MENTRE (k <= colonne_1)
+                val = val + elemento di matrice_1 in posizione i,k * elemento di matrice_2 in posizione k,j
+                k = k + 1
+            FINE
+            elemento di matrice_prodotto in posizione i,j = val
+            j = j + 1
+        FINE
+    i = i + 1
+FINE
+
+FUNZIONE trasposta_matrice
+
+INPUT
+matrice_1, matrice da trasporre, array a 2 dimensioni di interi
+righe_1, numero di righe della matrice, naturale >0
+colonne_1, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, individua le righe della matrice, naturale >0 <= righe_1
+j, individua le colonne della matrice, naturale >0 <= colonne_1
+
+OUTPUT
+matrice_trasposta, matrice trasposta di matrice_1, array a 2 dimensioni di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= colonne_1)
+        j = 1
+        MENTRE (j <= righe_1)
+            elemento di matrice_trasposta in posizione i,j = elemento di matrice_1 in posizione j,i
+            j = j + 1
+        FINE
+        i = i + 1
+    FINE
+FINE   
+
+
+FUNZIONE prodotto_scalare_matrice
+
+INPUT
+matrice_1, matrice di cui fare il prodotto con uno scalare, array a 2 dimensioni di interi
+righe_1, numero di righe della matrice, naturale >0
+colonne_1, numero di colonne della matrice, naturale >0
+scalare, numero con cui moltiplicare matrice_1, intero
+
+LAVORO
+i, individua le righe della matrice, naturale >0 <= righe_1
+j, individua le colonne della matrice, naturale >0 <= colonne_1
+
+OUTPUT
+matrice_prodotto_scalare, matrice prodotto scalare di matrice_1, array a 2 dimensioni di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= righe_1)
+        j = 1
+        MENTRE (j <= colonne_1)
+            elemento di matrice_prodotto_scalare in posizione i,j = elemento di matrice_1 in posizione i,j * scalare
+            j = j + 1
+        FINE
+        i = i + 1
+    FINE
+FINE   
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+

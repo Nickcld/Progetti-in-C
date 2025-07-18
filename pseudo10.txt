@@ -1,0 +1,47 @@
+Si scriva una funzione che riceva in ingresso due parole di al massimo 30 caratteri e verifichi se la seconda parola è contenuta almeno una volta all’interno della prima parola (ossia se la seconda parola è una sottostringa della prima parola).
+
+FUNZIONE individuare_sottostringa
+
+INPUT
+stringa_1, parola in cui verificare se è contenuta stringa_2, stringa 
+dimensione_1, lunghezza di stringa_1, naturale >0
+stringa_2, parola da cercare in stringa_1, stringa 
+dimensione_2, lunghezza di stringa_2, naturale >0
+
+LAVORO
+i, individua le posizioni dei caratteri di stringa_1, naturale >0
+j, individua le posizioni dei caratteri di stringa_2, naturale >0
+k, individua le posizioni dei caratteri di stringa_1 da confrontare coi caratteri di stringa_2, naturale >0
+comuni, serve a memorizzare il numero di caratteri adiacenti in comune tra le due stringhe, naturale >=0
+
+OUTPUT
+esito, indica se stringa_2 è una sottostringa di stringa_1 o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    esito = FALSO
+    i = 1
+    k = i
+    MENTRE (i <= dimensione_1) AND (esito = FALSO)
+        SE (elemento in posizione i di stringa_1 = elemento in posizione 1 di stringa_2)
+            ALLORA comuni = 1
+                   j = 2
+                   k = i + 1
+            MENTRE (j <= dimensione_2) AND (k <= dimensione_1)
+                SE (elemento in posizione k di stringa_1 = elemento in posizione j di stringa_2 
+                ALLORA comuni = comuni + 1
+                FINE
+                j = j + 1
+                k = k + 1
+            FINE
+            SE (comuni = dimensione_2)
+                ALLORA esito = VERO
+            FINE
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+
+

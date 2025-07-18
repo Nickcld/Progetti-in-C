@@ -1,0 +1,115 @@
+Si assuma presente in memoria un vettore contenente le informazioni relative alle verbalizzazioni di un esame. Il vettore contiene le coppie nome-voto. Ad esempio, il contenuto del vettore potrebbe essere il seguente:
+(gianni 27) (marco 28) (luigi 20) (giovanni 25) (sergio 24) (luisa 29).
+Realizzare il codice di un programma che riceve in input il vettore e stampi la media dei voti ottenuti dagli studenti ed il nome e il voto dello studente col voto più alto. Se più studenti condividono il voto più alto basta stamparne uno.
+
+
+Tipo di dato: Studente, record a 2 campi:
+- nome, nome dello studente, stringa
+- voto, voto ottenuto dallo studente all'esame, naturale >=0
+
+
+FUNZIONI D'ACCESSO AL TIPO DI DATO Studente:
+
+FUNZIONE stud_voto_leggere
+
+INPUT
+S, studente di cui leggere il voto, record di tipo Studente
+
+OUTPUT
+V, voto dello studente, naturale >=0
+
+ALGORITMO
+
+INIZIO
+    V = elemento del campo voto di S
+FINE
+
+FUNZIONE stud_nome_leggere
+
+INPUT
+S, studente di cui leggere il nome, record di tipo Studente
+
+OUTPUT
+N, nome dello studente, stringa
+
+ALGORITMO
+
+INIZIO
+    N = elemento del campo nome di S
+FINE
+
+
+FUNZIONE media_voti_calcolare
+
+INPUT
+vettore_studenti, elenco contenente le coppie nome-voto degli studenti, array a 1 dimensione di Studenti
+dimensione, dimensione di vettore_studenti, naturale >0
+
+LAVORO
+i, individua le posizioni degli studenti nel vettore, naturale >0
+somma_voti, somma dei voti ottenuti da tutti gli studenti presenti nel vettore, naturale >0
+
+OUTPUT
+media_voti, media dei voti ottenuti dagli studenti all'esame, reale
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    somma_voti = 0
+    MENTRE (i <= dimensione)
+        somma_voti = somma_voti + stud_voto_leggere(elemento di vettore_studenti in posizione i)
+        i = i + 1
+    FINE
+    media_voti = somma_voti/dimensione
+FINE
+
+
+FUNZIONE individuare_voto_max
+
+INPUT
+vettore_studenti, elenco contenente le coppie nome-voto degli studenti, array a 1 dimensione di Studenti
+dimensione, dimensione di vettore_studenti, naturale >0
+
+LAVORO
+i, individua le posizioni degli studenti nel vettore, naturale >0
+indice_stud_voto_max, individua la posizione nel vettore dello studente col voto massimo, naturale >0
+
+OUTPUT
+stud_voto_max, studente col voto massimo individuato nel vettore, Studente
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    indice_stud_voto_max = i
+    MENTRE (i < dimensione)
+        SE (stud_voto_leggere(elemento di vettore_studenti in posizione indice_stud_voto_max) < stud_voto_leggere(elemento di vettore_studenti in posizione i + 1))
+            ALLORA indice_stud_voto_max = i + 1
+        FINE
+        i = i + 1
+    FINE
+    stud_voto_max = Studente in posizione indice_stud_voto_max
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

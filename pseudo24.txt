@@ -1,0 +1,34 @@
+Realizzare una funzione che riceve come parametri di input una sequenza di caratteri, ed elimini i caratteri contigui ripetuti, spostando a sinistra gli elementi restanti.
+
+FUNZIONE eliminare_contigui_ripetuti
+
+INPUT
+sequenza, sequenza di caratteri di cui eliminare i contigui ripetuti, array a 1 dimensione di caratteri
+dimensione, lunghezza di sequenza, naturale >0
+
+LAVORO
+i, indica la posizione del carattere di sequenza in elaborazione, naturale >0
+temp, individua la posizione del carattere di sequenza da spostare, naturale >0
+
+OUTPUT
+sequenza, sequenza da cui sono stati eliminati i caratteri contigui ripetuti, array a 1 dimensione di caratteri
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i < dimensione)
+        SE (elemento in posizione i di sequenza = elemento in posizione i + 1 di sequenza)
+            ALLORA temp = i + 1
+            MENTRE (temp < dimensione)
+                elemento in posizione temp di sequenza = elemento in posizione temp + 1 di sequenza
+                temp = temp + 1
+            FINE
+            dimensione = dimensione - 1
+        ALTRIMENTI i = i + 1
+        FINE
+    FINE
+FINE        
+                
+                
+                   

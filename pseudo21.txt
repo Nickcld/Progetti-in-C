@@ -1,0 +1,52 @@
+Scrivere una funzione che, dato un vettore di numeri interi, individua e restituisce la lunghezza del più lungo "altopiano", definito come una sequenza di elementi identici e consecutivi.
+Esempio: V = [1, 2, 2, 2, 4, 4, 2, 5] -> La funzione deve restituire 3 (la sequenza 2, 2, 2).
+
+FUNZIONE trovare_altopiano_massimo
+
+INPUT
+vettore, vettore in cui individuare l'altopiano di lunghezza maggiore, array a 1 dimensione di interi
+dimensione, lunghezza del vettore, naturale 
+
+LAVORO
+i, individua le posizioni degli elementi del vettore, naturale >0
+lunghezza_corrente, lunghezza dell'altopiano che si sta esaminando, naturale >0
+
+OUTPUT
+lunghezza_max, lunghezza dell'altopiano più lungo individuato, naturale
+
+ALGORITMO
+
+INIZIO
+    SE (dimensione = 0)
+        ALLORA lunghezza_max = 0
+    FINE
+    lunghezza_max = 1
+    lunghezza_corrente = 1
+    i = 2
+    MENTRE (i <= dimensione)
+        SE (elemento di vettore in posizione i = elemento di vettore in posizione i - 1)
+            ALLORA lunghezza_corrente = lunghezza_corrente + 1
+            ALTRIMENTI SE (lunghezza_corrente > lunghezza_max)
+                ALLORA lunghezza_max = lunghezza_corrente
+            FINE
+            lunghezza_corrente = 1
+        FINE
+        i = i + 1
+    FINE
+    SE (lunghezza_corrente > lunghezza_max)
+        ALLORA lunghezza_max = lunghezza_corrente
+    FINE
+FINE
+
+
+
+
+
+
+
+
+
+
+
+
+   

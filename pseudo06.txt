@@ -1,0 +1,68 @@
+Realizzare una funzione che riceve come parametro di input una matrice di numeri interi minori di 10 e individua le colonne che contengono tre elementi consecutivi che abbiano valori successivi.
+
+FUNZIONE consecutivi_successivi
+
+INPUT
+elenco, array in cui verificare che ogni elemento consecutivo abbia valore successivo rispetto al precedente, array a 1 dimensione di interi
+dimensione, indica la lunghezza dell'elenco, naturale >0
+MAX, indica il numero massimo di valori consecutivi successivi che è possibile individuare affinchè la funzione restituisca esito positivo, costante = 2
+
+LAVORO
+i, individua la posizione degli elementi nell'elenco, naturale >0
+successivi, contatore che aggiorna il valore dei numeri consecutivi successivi trovati nell'elenco, naturale >=0
+MAX, indica il numero massimo di valori consecutivi successivi che è possibile individuare affinchè la funzione restituisca esito positivo, costante = 2
+
+OUTPUT
+esito, indica se sono stati individuati tre elementi consecutivi con valori successivi nell'elenco, booleano
+
+ALGORITMO
+
+INIZIO
+i = 1
+successivi = 0
+esito = FALSO
+MENTRE (i < dimensione) AND (esito = FALSO)
+    SE (elemento in posizione i di elenco = elemento in posizione i + 1 di elenco - 1)
+        ALLORA successivi = successivi + 1
+            SE (successivi = MAX)
+                ALLORA esito = VERO
+            FINE
+        ALTRIMENTI successivi = 0
+    FINE
+    i = i + 1
+FINE
+FINE
+
+FUNZIONE controllare_matrice
+
+INPUT
+matrice, matrice in cui individuare eventuali colonne con tre elementi consecutivi con valori successivi, array a 2 dimensioni di interi
+righe, indica il numero di righe della matrice, naturale >0
+colonne, indica il numero di colonne della matrice, naturale >0
+NESSUNA_COLONNA, valore che indica quando nessuna colonna soddisfa la condizione, costante = 0
+
+LAVORO
+i, indice che individua la posizione nelle righe, naturale 
+j, indice che individua la posizione nelle colonne, naturale
+colonna_corrente, array che contiene gli elementi della colonna j-esima, array a 1 dimensione di interi
+
+OUTPUT
+colonna_trovata, indice della colonna contenente tre elementi consecutivi successivi, naturale
+
+ALGORITMO
+
+INIZIO
+    colonna_trovata = NESSUNA_COLONNA
+    j = 1
+    MENTRE (j <= colonne) AND (colonna_trovata = NESSUNA_COLONNA)
+        i = 1
+        MENTRE (i <= righe)
+            elemento di colonna_corrente in posizione i = elemento di matrice in posizione i,j
+            i = i + 1
+        FINE
+        SE (consecutivi_successivi(colonna_corrente, righe, MAX) = VERO)
+            ALLORA colonna_trovata = j
+        FINE
+        j = j + 1
+    FINE
+FINE

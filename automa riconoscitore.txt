@@ -1,0 +1,101 @@
+Realizzare un programma che riceve come parametro di input una stringa e sia in grado di riconoscere se la stringa appartiene al linguaggio costruito sull’alfabeto binario, costituito da parole in cui il numero di 0 è pari e il numero di 1 e’ dispari.
+
+
+FUNZIONE stringa_binaria
+
+INPUT
+stringa, stringa di cui riconoscere se è binaria o meno, stringa
+dim_stringa, dimensione della stringa, naturale >=0
+
+LAVORO
+i, individua le posizioni dei caratteri nella stringa, naturale >0
+
+OUTPUT
+esito, indica se la stringa analizzata è binaria o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    esito = VERO
+    MENTRE (i <= dim_stringa) AND (esito = VERO)
+        SE (elemento in posizione i di stringa <> '0') AND (elemento in posizione i di stringa <> '1')
+            ALLORA esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE
+
+FUNZIONE pari
+
+INPUT
+numero, numero di cui verificare se è pari o dispari, intero
+
+OUTPUT
+esito, indica se il numero analizzato è pari o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    esito = VERO
+    MENTRE (numero > 0)
+        numero = numero - 2
+    FINE
+    SE (numero <> 0) 
+        ALLORA esito = FALSO
+    FINE
+FINE
+
+FUNZIONE analizzare_stringa
+
+INPUT
+stringa, stringa di cui verificare se appartiene al linguaggio costruito sull'alfabeto binario costituito da parole in cui il numero di 0 è pari e il numero di 1 è dispari o meno, stringa
+dimensione, dimensione della stringa, naturale >0
+
+LAVORO
+i, individua le posizioni dei caratteri della stringa, naturale >0
+zeri_presenti, contatore degli zeri presenti nella stringa, naturale >=0
+uno_presenti, contatore degli uno presenti nella stringa, naturale >=0
+
+OUTPUT
+esito, indica se la stringa analizzata appartiene al linguaggio o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    esito = FALSO
+    SE (stringa_binaria(stringa, dimensione) = VERO)
+        zeri_presenti = 0
+        uno_presenti = 0
+        i = 1
+        MENTRE (i <= dimensione)
+            SE (elemento in posizione i di stringa = '0')
+                ALLORA zeri_presenti = zeri_presenti + 1
+                ALTRIMENTI uno_presenti = uno_presenti + 1
+            FINE
+            i = i + 1
+        FINE
+        SE (pari(zeri_presenti) = VERO) AND (pari(uno_presenti) = FALSO)
+            ALLORA esito = VERO
+        FINE
+    FINE
+FINE
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

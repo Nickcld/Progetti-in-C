@@ -1,0 +1,39 @@
+Realizzare una funzione che riceve come parametri di input due numeri interi n > 0 e k > 1 e costruisce un elenco A di n numeri interi casuali minori di 100 che non siano multipli di k.
+
+FUNZIONE eliminare_multipli
+
+INPUT
+n, dimensione dell'elenco da costruire, naturale >0
+k, numero di cui eliminare i multipli nell'elenco creato, naturale >1
+
+LAVORO
+i, indice che individua le posizioni dell'elenco, naturale >0 <=n
+temp, variabile utile a verificare se r è multiplo di k o meno, naturale >0 <=n
+r, numero casuale, naturale >0 <100
+base, variabile compresa nella formula per la generazione di numeri random, naturale >=0
+
+OUTPUT
+elenco, elenco privo dei multipli di k, vettore a 1 dimensione di interi
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    MENTRE (i <= n)
+        r = ((base + 4) + (base + 7)) * ((base - 2) + (base - 1))
+        MENTRE (r >= 100)
+            r = r - 100
+        FINE
+        temp = r
+        MENTRE (temp > 0)
+            temp = temp - k
+        FINE
+        SE (temp < 0)
+            ALLORA elemento di elenco in posizione i = r
+                   i = i + 1
+        FINE
+        base = base + 1
+    FINE
+FINE
+
+

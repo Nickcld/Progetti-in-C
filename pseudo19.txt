@@ -1,0 +1,49 @@
+Realizzare una funzione che riceve come parametro di input una matrice quadrata di interi positivi e verifica se ogni riga ha una somma maggiore o uguale alla somma della riga precedente. La funzione restituisce 1 se la condizione è soddisfatta per tutte le righe, 0 altrimenti.
+
+
+FUNZIONE verificare_crescita_righe
+
+INPUT
+matrice, matrice di cui verificare se ogni riga ha una somma maggiore o uguale alla somma della riga precedente (quindi se la somma delle righe è crescente), array a 2 dimensioni di interi
+righe, numero di righe della matrice, naturale >0
+colonne, numero di colonne della matrice, naturale >0
+
+LAVORO
+i, individua le righe della matrice, naturale >0
+j, individua le colonne della matrice, naturale >0
+somma_riga_corrente, somma degli elementi della riga corrente, naturale >=0 
+somma_max, somma massima individuata tra le righe, naturale >0
+
+OUTPUT
+esito, indica se la somma delle righe della matrice è crescente o meno, booleano
+
+ALGORITMO
+
+INIZIO
+    i = 1
+    esito = VERO
+    j = 1
+    somma_max = 0
+    MENTRE (j <= colonne)
+        somma_max = somma_max + elemento in posizione i,j di matrice
+        j = j + 1
+    FINE
+    i = i + 1
+    MENTRE (i <= righe) AND (esito = VERO)
+        somma_riga_corrente = 0
+        j = 1
+        MENTRE (j <= colonne)
+            somma_riga_corrente = somma_riga_corrente + elemento in posizione i,j di matrice
+            j = j + 1
+        FINE
+        SE (somma_corrente > somma_max)
+            ALLORA somma_max = somma_corrente
+            ALTRIMENTI esito = FALSO
+        FINE
+        i = i + 1
+    FINE
+FINE
+             
+            
+
+

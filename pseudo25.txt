@@ -1,0 +1,19 @@
+Si scriva una funzione ricorsiva che calcoli il fattoriale di un numero intero positivo.
+
+FUNZIONE calcolare_fattoriale
+
+INPUT
+n, numero di cui calcolare il fattoriale, naturale >=0
+
+OUTPUT
+fattoriale, fattoriale di n, naturale >0
+
+ALGORITMO
+
+INIZIO
+    SE (n = 0)
+        ALLORA fattoriale = 1
+    
+        ALTRIMENTI fattoriale = n * calcolare_fattoriale(n - 1)
+    FINE 
+FINE
