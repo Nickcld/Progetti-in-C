@@ -1,6 +1,6 @@
 # Progetti-in-C
 
-Benvenuto nel mio repository! Qui raccolgo alcuni progetti scritti in linguaggio **C**, con annessi **pseudocodici** per facilitarne la comprensione.
+Benvenuto nel mio repository! Qui raccolgo alcuni progetti scritti in linguaggio **C**, con annessi **pseudocodici** per facilitarne la comprensione. Ho scritto questi codici/pseudocodici durante il mio primo anno di Università (che è stato anche il primo anno in cui ho iniziato a programmare) quindi mi scuso se alcuni progetti, specie quelli meno recenti, possano sembrare un po' disordinati con codici poco puliti, ma ovviamente nel corso dell'anno ho affinato meglio le tecniche di programmazione (indentazione e modularizzazione del codice, efficienza degli algoritmi ecc...).
 
 ---
 
