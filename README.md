@@ -4,6 +4,11 @@ Benvenuto nel mio repository! Qui raccolgo alcuni progetti scritti in linguaggio
 
 ---
 
+##  Nota
+
+Per alcune tracce sono presenti degli pseudocodici "bis", questo vuol dire che sono delle versioni più aggiornate e precise rispetto alle versioni prive della scritta "bis" in quanto ho fatto delle correzioni agli algoritmi oppure ne ho realizzati di più funzionali ed efficienti rispetto a quelli presenti nelle versioni precedenti.
+
+---
 
 ##  Finalità
 
